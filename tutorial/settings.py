@@ -25,7 +25,7 @@ SECRET_KEY = 'yac3_&zt(haf0p$_@@so-eak0ix+xs!l3@cf29cz7&o!_0*u1w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []  # type: List[str]
 
 
 # Application definition
