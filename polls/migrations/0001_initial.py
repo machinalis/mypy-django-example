@@ -3,8 +3,8 @@
 from __future__ import unicode_literals
 from typing import Tuple, List
 
-from django.db import migrations, models
-import django.db.models.deletion
+from django.db import migrations, models  # type: ignore
+import django.db.models.deletion  # type: ignore
 
 
 class Migration(migrations.Migration):
