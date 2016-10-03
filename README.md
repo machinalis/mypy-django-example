@@ -36,21 +36,21 @@ If you take a look at the repo and its commits, you'll see how annotations were 
 useful as an example of what to expect when annotating your own code.
 
 Most of the changes consist mainly in adding types to view, namely a `request: HttpRequest` argument
-and a return value `-> HttpResponse`. See for example 60c1ff4.
+and a return value `-> HttpResponse`. See for example [60c1ff4](https://github.com/machinalis/mypy-django-example/commit/60c1ff4).
 
 Other functions/methods that are now views can usually be annotated in a fairly simple and obvious way,
-see for example 74335dd, 07a8f6b or b18aa7
+see for example [74335dd](https://github.com/machinalis/mypy-django-example/commit/74335dd), [07a8f6b](https://github.com/machinalis/mypy-django-example/commit/07a8f6b) or [b18aa7b](https://github.com/machinalis/mypy-django-example/commit/b18aa7b)
 
 What follows is a list of trickier cases
 
- * You need to provide a type for `settings.ALLOWED HOSTS` if left empty, see e6fdfab
+ * You need to provide a type for `settings.ALLOWED HOSTS` if left empty, see [e6fdfab](https://github.com/machinalis/mypy-django-example/commit/e6fdfab)
  * You need to modify migrations with no dependencies and also add a `# type: List[Tuple[str, str]]`
-   annotation to tis `dependencies` field, see 6b8f15a
- * You may want to `# type: ignore` some of the imported modules that have no type stubs to avoid warning messages. See fb2e1f4
+   annotation to tis `dependencies` field, see [6b8f15a](https://github.com/machinalis/mypy-django-example/commit/6b8f15a)
+ * You may want to `# type: ignore` some of the imported modules that have no type stubs to avoid warning messages. See [fb2e1f4](https://github.com/machinalis/mypy-django-example/commit/fb2e1f4)
  * Some complicated/deep structures containing None values can produce some warnings that can be avoided
-   by giving more detailed annotations. See for example this case with `ModelAdmin.fieldsets`: abb3ab0
+   by giving more detailed annotations. See for example this case with `ModelAdmin.fieldsets`: [abb3ab0](https://github.com/machinalis/mypy-django-example/commit/abb3ab0)
  * Setting attributes to function objects (something you do if you use them in admin modules, for
-   example for a `list_display`) is not very well supported by mypy. You can see that I workarounded that at abb3ab0.
+   example for a `list_display`) is not very well supported by mypy. You can see that I workarounded that at [abb3ab0](https://github.com/machinalis/mypy-django-example/commit/abb3ab0).
    There is [an open issue](https://github.com/python/mypy/issues/2087) at the mypy tracker about this.
 
 
