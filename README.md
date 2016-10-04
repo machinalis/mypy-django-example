@@ -2,13 +2,13 @@
 ## A demo project for django-mypy
 
 This repository contains an implementation of the [django 1.10 tutorial](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)
-extended with PEP-484 type annotations. It's goal is to be used as an example and demonstration of
+extended with PEP-484 type annotations. Its goal is to be used as an example and demonstration of
 the [mypy-django](https://github.com/machinalis/mypy-django) type stubs project. See the README
-file at https://github.com/machinalis/mypy-django for more details
+file at https://github.com/machinalis/mypy-django for more details.
 
 ## Usage
 
-To typecheck this you should install mypy-django and run:
+To type check the project you should install mypy-django and run:
 
 ```
 $ mypy --strict-optional -p polls
@@ -25,17 +25,17 @@ tutorial/wsgi.py:12: error: No library stub file for module 'django.core.wsgi'
 ```
 
 The error messages known shown above are expected (They just mention that mypy-django doesn't
-cover some of the django modules).
+cover some of the Django modules).
 
 If you need information about how to run this as a project you should probably follow the django
 tutorial itself.
 
 ## Using type annotations
 
-If you take a look at the repo and its commits, you'll see how annotations were added and can be
+If you take a look at the repo and its commits, you'll see how annotations were added; this can be
 useful as an example of what to expect when annotating your own code.
 
-Most of the changes consist mainly in adding types to view, namely a `request: HttpRequest` argument
+Most of the changes consisted mainly in adding types to views, namely a `request: HttpRequest` argument
 and a return value `-> HttpResponse`. See for example [60c1ff4](https://github.com/machinalis/mypy-django-example/commit/60c1ff4).
 
 Other functions/methods that are now views can usually be annotated in a fairly simple and obvious way,
@@ -52,6 +52,3 @@ What follows is a list of trickier cases
  * Setting attributes to function objects (something you do if you use them in admin modules, for
    example for a `list_display`) is not very well supported by mypy. You can see that I workarounded that at [abb3ab0](https://github.com/machinalis/mypy-django-example/commit/abb3ab0).
    There is [an open issue](https://github.com/python/mypy/issues/2087) at the mypy tracker about this.
-
-
-
